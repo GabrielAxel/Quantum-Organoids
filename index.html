@@ -462,6 +462,20 @@
             margin: 0 auto 1rem;
         }
         
+        .team-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1rem;
+            border: 2px solid var(--ink-lighter);
+            transition: border-color 0.2s;
+        }
+        
+        .team-member:hover .team-photo {
+            border-color: var(--cyan);
+        }
+        
         .team-info h4 {
             color: var(--white);
             font-size: 1.1rem;
@@ -721,15 +735,15 @@
         
         <div class="team-grid">
             <div class="team-member">
-                <div class="team-avatar">BG</div>
+                <img src="bengoertzel.jpg" alt="Benjamin Goertzel" class="team-photo">
                 <div class="team-info">
                     <h4>Benjamin Goertzel, PhD</h4>
                     <p class="role">AGI Researcher</p>
-                    <p class="bio">Founder of OpenCog and Hyperon. Co-editor of <em>Evidence for Psi</em>. Author of the wu-wei geodesics framework underlying this program.</p>
+                    <p class="bio">Founder of SingularityNET and Hyperon. Co-editor of <em>Evidence for Psi</em>. Author of the wu-wei geodesics framework underlying this program.</p>
                 </div>
             </div>
             <div class="team-member">
-                <div class="team-avatar">JT</div>
+                <img src="jamestagg.jpg" alt="James Tagg" class="team-photo">
                 <div class="team-info">
                     <h4>James Tagg</h4>
                     <p class="role">Technology & Physics</p>
@@ -737,7 +751,7 @@
                 </div>
             </div>
             <div class="team-member">
-                <div class="team-avatar">GM</div>
+                <img src="gabrielmontes.png" alt="Gabriel Axel Montes" class="team-photo">
                 <div class="team-info">
                     <h4>Gabriel Axel Montes, PhD</h4>
                     <p class="role">Neuroscience & AI</p>
@@ -763,7 +777,7 @@
         <div class="cta-box">
             <h2>If the future can bias the present—even slightly—we should find out.</h2>
             <p>We're open to collaborators and partners across physics, neuroscience, AGI, and scientific philanthropy.</p>
-            <a href="/cdn-cgi/l/email-protection#81e2eeeff5e0e2f5c1e4f9e0ecf1ede4afe2eeec" class="btn-primary">Contact Us</a>
+            <a href="mailto:bengoertzel@gmail.com" class="btn-primary">Contact Us</a>
         </div>
     </section>
     
