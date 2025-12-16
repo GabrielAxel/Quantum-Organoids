@@ -545,6 +545,43 @@
             filter: grayscale(0%);
         }
         
+        /* Publications Section */
+        .publications-section {
+            border-top: 1px solid var(--ink-lighter);
+        }
+        
+        .publications-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .publication-item {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+        }
+        
+        .publication-item .bullet {
+            color: var(--cyan);
+            flex-shrink: 0;
+        }
+        
+        .publication-item a {
+            color: var(--silver);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .publication-item a:hover {
+            color: var(--cyan);
+        }
+        
+        .publication-item .source {
+            color: var(--slate);
+            font-size: 0.85rem;
+        }
+        
         /* CTA Section */
         .cta-section {
             border-top: 1px solid var(--ink-lighter);
@@ -663,6 +700,7 @@
             <li><a href="#research">Research</a></li>
             <li><a href="#rigor">Methods</a></li>
             <li><a href="#team">Team</a></li>
+            <li><a href="#publications">Publications</a></li>
         </ul>
         <a href="#contact" class="nav-cta">Contact Us</a>
     </nav>
@@ -674,7 +712,7 @@
                 <span id="typed-logo"></span><span class="cursor"></span><span class="research-lab"> Research Lab</span>
             </div>
             <h1>Testing Whether the <em>Future</em> Subtly Biases the Present</h1>
-            <p class="hero-lead">Organoids, quantum computers, and large-scale simulations—one integrated program to test teleological effects in physics.</p>
+            <p class="hero-lead">Organoids, quantum computers, and large-scale simulations—one integrated program to test teleological effects in physics, biology and AI.</p>
             <p class="hero-sub"><strong>No new forces. No broken causality.</strong> Just letting both ends of the story matter—and building rigorous experiments to see if the predicted biases exist.</p>
             <div class="hero-buttons">
                 <a href="#contact" class="btn-primary">Contact Us</a>
@@ -834,6 +872,31 @@
             </div>
         </div>
         <p style="color: var(--slate); text-align: center;">Supported by experimental physicists, quantum engineers, organoid specialists, and software scientists.</p>
+    </section>
+    
+    <!-- Publications Section -->
+    <section class="publications-section" id="publications">
+        <span class="section-label">Background</span>
+        <h2 class="section-title">Publications</h2>
+        
+        <div class="publications-list">
+            <div class="publication-item">
+                <span class="bullet">→</span>
+                <a href="https://rxiverse.org/abs/2509.0018" target="_blank" rel="noopener">Psi via Wu-Wei Quantum Geodesics</a>
+            </div>
+            <div class="publication-item">
+                <span class="bullet">→</span>
+                <a href="https://vixra.org/pdf/2506.0012v1.pdf" target="_blank" rel="noopener">Morphic Resonance and Quantum Geodesics</a>
+            </div>
+            <div class="publication-item">
+                <span class="bullet">→</span>
+                <a href="https://www.amazon.com/Evidence-Psi-Thirteen-Empirical-Research/dp/0786478284" target="_blank" rel="noopener">Evidence for Psi: Thirteen Empirical Research Reports</a>
+            </div>
+            <div class="publication-item">
+                <span class="bullet">→</span>
+                <a href="https://bengoertzel.substack.com/p/exploring-the-reality-of-psi" target="_blank" rel="noopener">Exploring the Reality of Psi</a>
+            </div>
+        </div>
     </section>
     
     <!-- Partners Section -->
