@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Psi Research Lab</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --ink: #0d1117;
@@ -58,11 +58,11 @@
         }
         
         .logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.4rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.3rem;
             font-weight: 600;
             color: var(--white);
-            letter-spacing: 0.5px;
+            letter-spacing: 0px;
             text-decoration: none;
         }
         
@@ -110,19 +110,33 @@
         
         .hero-content { max-width: 800px; }
         
-        .hero-badge {
-            display: inline-block;
-            background: rgba(88, 166, 255, 0.1);
-            border: 1px solid rgba(88, 166, 255, 0.3);
-            color: var(--cyan);
-            padding: 0.4rem 1rem;
-            font-size: 0.75rem;
+        .hero-logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
             font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
+            color: var(--cyan);
             margin-bottom: 1.5rem;
             opacity: 0;
-            animation: fadeIn 0.6s forwards 0.1s;
+            animation: fadeIn 0.3s forwards 0.1s;
+        }
+        
+        .hero-logo .cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1.2em;
+            background: var(--cyan);
+            margin-left: 2px;
+            vertical-align: text-bottom;
+            animation: blink 0.7s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        .hero-logo .research-lab {
+            color: var(--white);
         }
         
         .hero h1 {
@@ -643,7 +657,7 @@
     
     <!-- Navigation -->
     <nav>
-        <a href="#" class="logo">AI Psi Research Lab</a>
+        <a href="#" class="logo">psilab.ai</a>
         <ul class="nav-links">
             <li><a href="#thesis">Thesis</a></li>
             <li><a href="#research">Research</a></li>
@@ -656,7 +670,9 @@
     <!-- Hero -->
     <section class="hero">
         <div class="hero-content">
-            <span class="hero-badge">AI Psi Research Lab</span>
+            <div class="hero-logo">
+                <span id="typed-logo"></span><span class="cursor"></span><span class="research-lab"> Research Lab</span>
+            </div>
             <h1>Testing Whether the <em>Future</em> Subtly Biases the Present</h1>
             <p class="hero-lead">Organoids, quantum computers, and large-scale simulations—one integrated program to test teleological effects in physics.</p>
             <p class="hero-sub"><strong>No new forces. No broken causality.</strong> Just letting both ends of the story matter—and building rigorous experiments to see if the predicted biases exist.</p>
@@ -849,11 +865,50 @@
     
     <!-- Footer -->
     <footer>
-        <div class="logo">AI Psi Research Lab</div>
+        <div class="logo">psilab.ai</div>
         <p>© 2025 All research conducted under appropriate institutional oversight.</p>
     </footer>
     
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
+        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
-     
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+        
+        // Typing animation for hero logo
+        const typedLogo = document.getElementById('typed-logo');
+        const segments = ['psi', 'lab', '.ai'];
+        const typeSpeed = 80;
+        const pauseDuration = 400;
+        
+        let segmentIndex = 0;
+        let charIndex = 0;
+        
+        function typeSegment() {
+            if (segmentIndex < segments.length) {
+                const currentSegment = segments[segmentIndex];
+                if (charIndex < currentSegment.length) {
+                    typedLogo.textContent += currentSegment[charIndex];
+                    charIndex++;
+                    setTimeout(typeSegment, typeSpeed);
+                } else {
+                    segmentIndex++;
+                    charIndex = 0;
+                    if (segmentIndex < segments.length) {
+                        setTimeout(typeSegment, pauseDuration);
+                    }
+                }
+            }
+        }
+        
+        // Start typing after a brief delay
+        setTimeout(typeSegment, 500);
+    </script>
+</body>
+</html>
